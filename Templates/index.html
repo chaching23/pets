@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <h1 style="text-align:center">All the Pets!</h1>
+    <table style="text-align:center; margin:0 auto"> 
+        <tr>  
+            <th>ID</th> 
+            <th>Name</th> 
+            <th>Type</th> 
+        </tr>
+
+       
+        {% for pet in all_pets %}
+        <tr>
+            <td>    {{ pet["pet_id"] }} </td>
+            <td>   {{ pet["name"] }} </td> 
+            <td>  {{ pet["type"] }}     </td>
+        </tr>
+        {% endfor %}
+
+  
+    </table>
+
+
+    <h1 style="text-align:center">Add a Pet</h1>
+    <form action="/create_friend" method="POST" style="text-align:center">
+        <p>Name <input type="text" name="lname"></p>
+        <p>Type <input type="text" name="occ"></p>    
+        <input type="submit" value="Add ">
+    
+    </form>
+    
+</body>
+</html>
